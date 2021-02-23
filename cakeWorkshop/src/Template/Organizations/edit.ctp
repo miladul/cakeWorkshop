@@ -1,7 +1,7 @@
 <div class="row mt-5">
     <div class="col-sm-6 mx-auto">
         <h3>
-            Add Organization
+            Edit Organization
             <?= $this->Html->link(__('Back'), ['controller'=>'organizations','action' => 'index'],['class'=>'btn btn-danger float-right ml-3']) ?>
         </h3>
 
@@ -25,7 +25,7 @@
                     ?>
                     <label>Organization Type</label>
                     <select name="organization_type" onchange='CheckType(this.value);'>
-                        <option>Select Organization Type</option>
+                        <option value="">Select Organization Type</option>
                         <option value="Government ministry" <?=(in_array('Government ministry'==$OrgType, $type)) ? 'selected' : '' ?>>Government ministry</option>
                         <option value="Government Department" <?=(in_array('Government Department'==$OrgType, $type)) ? 'selected' : '' ?>>Government Department</option>
                         <option value="Training Service Provider" <?=(in_array('Training Service Provider'==$OrgType, $type)) ? 'selected' : '' ?>>Training Service Provider</option>
@@ -60,7 +60,7 @@
                 </div>
             </div>
         </fieldset>
-        <?= $this->Form->button(__('Submit'),['class'=>'btn btn-info float-right']) ?>
+        <?= $this->Form->button(__('Update'),['class'=>'btn btn-info float-right']) ?>
         <?= $this->Form->end() ?>
     </div>
 </div>
@@ -83,7 +83,6 @@
         rules: {
             'name':{
                 required: true,
-                minlength: 4
             },
             'organization_type': {
                 required: true
@@ -96,8 +95,10 @@
             },
             'focal_person_phone': {
                 required: true,
+                number:true,
                 minlength: 11,
                 maxlength:11,
+
             },
             'focal_person_email': {
                 required: true,
@@ -105,12 +106,12 @@
             },
             'no_of_brances': {
                 required: true,
+                number:true,
             }
         },
         messages:{
             name:{
                 required: 'Please enter organization name',
-                minlength: 'Minimum 4 digit required',
             },
             organization_type:{
                 required: 'Please select organization type',
@@ -123,8 +124,10 @@
             },
             focal_person_phone:{
                 required: 'Please enter focal_person_phone',
+                number: "Enter valid Phone number",
                 minlength: 'Need minimum 11 digit',
                 maxlength:'Need maximum 11 digit',
+
             },
             focal_person_email:{
                 required: 'Please enter focal_person_email',
@@ -132,6 +135,7 @@
             },
             no_of_brances:{
                 required: 'Please enter no_of_brances',
+                number: "Enter valid brace number"
             }
         },
         unhighlight: function(element, errorClass, validClass) {

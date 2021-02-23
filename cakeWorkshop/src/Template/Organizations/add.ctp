@@ -16,7 +16,7 @@
                 <div class="col">
                     <label>Organization Type</label>
                     <select name="organization_type" id="" onchange='CheckType(this.value);'>
-                        <option>Select Organization Type</option>
+                        <option value="">Select Organization Type</option>
                         <option value="Government ministry">Government ministry</option>
                         <option value="Government Department">Government Department</option>
                         <option value="Training Service Provider">Training Service Provider</option>
@@ -24,45 +24,44 @@
                         <option value="others">others</option>
                     </select>
 
-                    <label id="type-error" class="error" for="type">
-                   <?php if(isset($org_type_error)){echo $org_type_error;} ?>
-                    </label>
+                    <!--<label id="type-error" class="error" for="type">
+                   <?php /*if(isset($org_type_error)){echo $org_type_error;} */?>
+                    </label>-->
                 </div>
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" name="organization_type" id="organization_type" placeholder="Enter organization type" style='display:none;margin-top: -2px;'/>
-
+                    <input type="text" name="organization_type" id="organization_type" placeholder="Enter organization type" style='display:none;margin-top: -1px;' disabled/>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label>Focal Person Name</label>
-                    <input type="text" name="focal_person_name" class="form-control" placeholder="Enter Focal Person Name">
+                    <input type="text" name="focal_person_name" class="form-control" placeholder="Enter Focal Person Name" required>
                 </div>
                 <div class="col">
                     <label>Focal Person Designation</label>
-                    <input type="text" name="focal_person_designation" class="form-control" placeholder="Enter Focal Person Designation">
+                    <input type="text" name="focal_person_designation" class="form-control" placeholder="Enter Focal Person Designation"  required>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label>Focal Person Phone</label>
-                    <input type="text" name="focal_person_phone" class="form-control" placeholder="Enter Focal Person Phone">
+                    <input type="text" name="focal_person_phone" class="form-control" placeholder="Enter Focal Person Phone" required>
                 </div>
                 <div class="col">
                     <label>Focal Person Email</label>
-                    <input type="text" name="focal_person_email" class="form-control" placeholder="Enter Focal Person Email">
+                    <input type="text" name="focal_person_email" class="form-control" placeholder="Enter Focal Person Email" required>
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label>No Of Branches</label>
-                    <input type="text" name="no_of_brances" class="form-control" placeholder="Enter no of branches">
+                    <input type="text" name="no_of_brances" class="form-control" placeholder="Enter no of branches" required>
                 </div>
             </div>
         </fieldset>
-        <?= $this->Form->button(__('Submit'),['class'=>'btn btn-info float-right']) ?>
+        <?= $this->Form->button(__('Add Organization'),['class'=>'btn btn-info float-right']) ?>
         <?= $this->Form->end() ?>
     </div>
 </div>
@@ -70,19 +69,13 @@
 <?php $this->append('script'); ?>
 <script type="text/javascript">
     function CheckType(val){
-        //content disable by js
-        /*var element=document.getElementById('organization_type');
-        if(val=='others')
-            element.style.display='block';
-        else
-            element.style.display='none';*/
-
-        //content disable by jQuery
         let element = $("#organization_type");
-        if(val=='others')
+        if(val=='others'){
             element.show().attr('disabled',false);
-        else
+        }
+        else{
             element.hide().attr('disabled', true);
+        }
     }
 
 </script>
@@ -106,6 +99,7 @@
             },
             'focal_person_phone': {
                 required: true,
+                number:true,
                 minlength: 11,
                 maxlength:11,
             },
@@ -115,6 +109,7 @@
             },
             'no_of_brances': {
                 required: true,
+                number: true
             }
         },
         messages:{
@@ -132,6 +127,7 @@
             },
             focal_person_phone:{
                 required: 'Please enter focal_person_phone',
+                number:"Enter valid phone number",
                 minlength: 'Need minimum 11 digit',
                 maxlength:'Need maximum 11 digit',
             },
@@ -141,6 +137,7 @@
             },
             no_of_brances:{
                 required: 'Please enter no_of_brances',
+                number: 'Enter number only'
             }
         },
         unhighlight: function(element, errorClass, validClass) {
