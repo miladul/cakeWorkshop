@@ -91,8 +91,8 @@ class UsersController extends AppController
      */
     public function edit($id = null)
     {
-        $user = $this->Auth->user();
-        if(!($user['id']==$id OR $user['role']=='admin')){
+        $authUser = $this->Auth->user();
+        if(!($authUser['id']==$id OR $authUser['role']=='admin')){
             $this->Flash->error(__('You have no permission to access this page'));
             return $this->redirect(array('controller' => 'users', 'action' => 'user_dashboard' ));
         }
@@ -109,7 +109,7 @@ class UsersController extends AppController
             }
             $this->Flash->error(__('The user could not be saved. Please, try again.'));
         }
-        $this->set(compact('user'));
+        $this->set(compact('user','authUser'));
     }
 
     /**

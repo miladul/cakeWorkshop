@@ -1,7 +1,10 @@
+
+
 <div class="row mt-5">
     <div class="col-sm-4 mx-auto">
         <?php
-        if($user['role']=='admin'){
+        //pr($authUser);
+        if($authUser['role']=='admin'){
             $backLink = 'admin';
             $headingText = 'Edit User Info';
         }else{
