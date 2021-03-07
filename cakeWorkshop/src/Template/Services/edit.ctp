@@ -65,89 +65,199 @@
                     //pr($service);die;
                 }
                 ?>
-                <div class="col-sm-4">
-                    <input name="technology[]" class="textfield" type="checkbox" value="PHP" id="" <?= (!empty($service->technology)?(in_array('PHP',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        PHP
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="JAVA" id="" <?= (!empty($service->technology)?(in_array('JAVA',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?> >
-                    <label class="form-check-label" for="">
-                        JAVA
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="Python" id="" <?= (!empty($service->technology)?(in_array('Python',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?> >
-                    <label class="form-check-label" for="">
-                        Python
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="MySql" id="" <?= (!empty($service->technology)?(in_array('MySql',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?> >
-                    <label class="form-check-label" for="">
-                        MySql
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="JavaScript" id="" <?= (!empty($service->technology)?(in_array('JavaScript',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?> >
-                    <label class="form-check-label" for="">
-                        JavaScript
-                    </label>
+                <div class="col-sm-10">
+                    <div>
+                        <input name="technology[]" class="textfield" type="checkbox" value="PHP" id="" <?= (!empty($service->technology)?(in_array('PHP',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            PHP
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Laravel" id="" <?= (!empty($service->technology)?(in_array('Laravel',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Laravel
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="CodeIgniter" id="" <?= (!empty($service->technology)?(in_array('CodeIgniter',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            CodeIgniter
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="CakePHP" id="" <?= (!empty($service->technology)?(in_array('CakePHP',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            CakePHP
+                        </label>
+                    </div>
+                    <div>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Python" id="" <?= (!empty($service->technology)?(in_array('Python',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Python
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Django" id="" <?= (!empty($service->technology)?(in_array('Django',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Django
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Flask" id="" <?= (!empty($service->technology)?(in_array('Flask',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Flask
+                        </label>
+                    </div>
+                    <div>
+                        <input name="technology[]" class="textfield" type="checkbox" value="JAVA" id="" <?= (!empty($service->technology)?(in_array('JAVA',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            JAVA
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="ASP/ASP.NET" id="" <?= (!empty($service->technology)?(in_array('ASP/ASP.NET',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            ASP/ASP.NET
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="C/C++" id="" <?= (!empty($service->technology)?(in_array('C/C++',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            C/C++
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="C#" id="" <?= (!empty($service->technology)?(in_array('C#',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            C#
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Ruby" id="" <?= (!empty($service->technology)?(in_array('Ruby',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Ruby
+                        </label>
+                    </div>
+                    <div>
+                        <input name="technology[]" class="textfield" type="checkbox" value="JavaScript" id="" <?= (!empty($service->technology)?(in_array('JavaScript',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            JavaScript
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="jQuery" id="" <?= (!empty($service->technology)?(in_array('jQuery',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            jQuery
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Ajax" id="" <?= (!empty($service->technology)?(in_array('Ajax',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Ajax
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="NodeJS" id="" <?= (!empty($service->technology)?(in_array('NodeJS',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            NodeJS
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="VeuJS" id="" <?= (!empty($service->technology)?(in_array('VeuJS',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            VeuJS
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Angular" id="" <?= (!empty($service->technology)?(in_array('Angular',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Angular
+                        </label>
+                    </div>
+                    <div>
+                        <input name="technology[]" class="textfield" type="checkbox" value="React Native" id="" <?= (!empty($service->technology)?(in_array('React Native',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            React Native
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Flutter" id="" <?= (!empty($service->technology)?(in_array('Flutter',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Flutter
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="JQuery Mobile" id="" <?= (!empty($service->technology)?(in_array('JQuery Mobile',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            JQuery Mobile
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Ionic" id="" <?= (!empty($service->technology)?(in_array('Ionic',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Ionic
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Mobile Angular UI" id="" <?= (!empty($service->technology)?(in_array('Mobile Angular UI',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Mobile Angular UI
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="NativeScript" id="" <?= (!empty($service->technology)?(in_array('NativeScript',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            NativeScript
+                        </label>
 
-                    <input name="technology[]" class="textfield" type="checkbox" value="ASP/ASP.NET" id="" <?= (!empty($service->technology)?(in_array('ASP/ASP.NET',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        ASP/ASP.NET
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="C#" id="" <?= (!empty($service->technology)?(in_array('C#',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        C#
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="C/C++" id="" <?= (!empty($service->technology)?(in_array('C/C++',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        C/C++
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="Ruby" id="" <?= (!empty($service->technology)?(in_array('Ruby',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        Ruby
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="SQLite" id="" <?= (!empty($service->technology)?(in_array('SQLite',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        SQLite
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="Django" id="" <?= (!empty($service->technology)?(in_array('Django',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        Django
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="NodeJS" id="" <?= (!empty($service->technology)?(in_array('NodeJS',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        NodeJS
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="VeuJS" id="" <?= (!empty($service->technology)?(in_array('VeuJS',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        VeuJS
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="Angular" id="" <?= (!empty($service->technology)?(in_array('Angular',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        Angular
-                    </label>
-                    <input name="technology[]" class="textfield" type="checkbox" value="CodeIgniter" id="" <?= (!empty($service->technology)?(in_array('CodeIgniter',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
-                    <label class="form-check-label" for="">
-                        CodeIgniter
-                    </label>
+
+                    </div>
+                    <div>
+                        <input name="technology[]" class="textfield" type="checkbox" value="MySql" id="" <?= (!empty($service->technology)?(in_array('MySql',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            MySQL
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Microsoft SQL Server" id="" <?= (!empty($service->technology)?(in_array('Microsoft SQL Server',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Microsoft SQL Server
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Oracle Database" id="" <?= (!empty($service->technology)?(in_array('Oracle Database',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Oracle Database
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="SQLite" id="" <?= (!empty($service->technology)?(in_array('SQLite',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            SQLite
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="MongoDB" id="" <?= (!empty($service->technology)?(in_array('MongoDB',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            MongoDB
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="MariaDB" id="" <?= (!empty($service->technology)?(in_array('MariaDB',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            MariaDB
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Microsoft Access" id="" <?= (!empty($service->technology)?(in_array('Microsoft Access',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Microsoft Access
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Laragon" id="" <?= (!empty($service->technology)?(in_array('Laragon',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
+                        <label class="form-check-label" for="">
+                            Laragon
+                        </label>
+                    </div>
+                    <div>
+                        <input name="technology[]" class="textfield" type="checkbox" value="HTML" id="" disabled>
+                        <label class="form-check-label" for="">
+                            HTML
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="CSS" id="" disabled>
+                        <label class="form-check-label" for="">
+                            CSS
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="WordPress" id="" disabled>
+                        <label class="form-check-label" for="">
+                            WordPress
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Joomla" id="" disabled>
+                        <label class="form-check-label" for="">
+                            Joomla
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Drupal" id="" disabled>
+                        <label class="form-check-label" for="">
+                            Drupal
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="WooCommerce" id="" disabled>
+                        <label class="form-check-label" for="">
+                            WooCommerce
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="October" id="" disabled>
+                        <label class="form-check-label" for="">
+                            October
+                        </label>
+                        <input name="technology[]" class="textfield" type="checkbox" value="Voyager" id="" disabled>
+                        <label class="form-check-label" for="">
+                            Voyager
+                        </label>
+                    </div>
                 </div>
-                <label for="" class="col-sm-2 col-form-label">No Of Users</label>
+            </div>
+            <div class="form-group row mt-2"><label for="" class="col-sm-2 col-form-label">No Of Users</label>
                 <div class="col-sm-4">
                     <input type="number" name="no_of_user" class="form-control textfield" id="" value="<?= !empty($service->no_of_user)? $service->no_of_user:'';?>" <?= ($service->eservice=='no')? 'disabled':'' ?> />
                 </div>
-            </div>
-            <div class="form-group row mt-2">
                 <label for="" class="col-sm-2 col-form-label">Major Features</label>
-                <div class="col-sm-10">
+                <div class="col-sm-4">
                     <textarea name="major_features" class="form-control textfield" <?= ($service->eservice=='no')? 'disabled':'';?>><?= !empty($service->major_features)? $service->major_features:'';?></textarea>
                 </div>
             </div>
             <div class="form-group row mt-2">
                 <label for="access-point" class="col-sm-2 col-form-label">Access Point</label>
                 <?php
-                //echo $service->access_point;
                 if(!empty($service->access_point)){
                     $ap = explode(',',$service->access_point);
-                    //pr($ap);die;
-
-                    //
                 }
                 ?>
                 <div class="col-sm-4 type_error">
@@ -175,27 +285,27 @@
                     <label class="form-check-label" for="">
                         Free
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="MFS" id="" <?= (in_array('MFS',$payment))?'checked':'' ?> >
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="MFS" id="" <?= (in_array('MFS',$payment))?'checked':'' ?> disabled>
                     <label class="form-check-label" for="">
                         MFS
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Online Banking" id="" <?= (in_array('Online Banking',$payment))?'checked':'' ?> >
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Online Banking" id="" <?= (in_array('Online Banking',$payment))?'checked':'' ?> disabled>
                     <label class="form-check-label" for="">
                         Online Banking
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Payment Gateway" id="" <?= (in_array('Payment Gateway',$payment))?'checked':'' ?> >
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Payment Gateway" id="" <?= (in_array('Payment Gateway',$payment))?'checked':'' ?> disabled>
                     <label class="form-check-label" for="">
                         Payment Gateway
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="E-challan" id="" <?= (in_array('E-challan',$payment))?'checked':'' ?> >
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="E-challan" id="" <?= (in_array('E-challan',$payment))?'checked':'' ?> disabled>
                     <label class="form-check-label" for="">
                         E-challan
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Challan" id="" <?= (in_array('Challan',$payment))?'checked':'' ?> >
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Challan" id="" <?= (in_array('Challan',$payment))?'checked':'' ?> disabled>
                     <label class="form-check-label" for="">
                         Challan
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Cash" id="" <?= (in_array('Cash',$payment))?'checked':'' ?> >
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Cash" id="" <?= (in_array('Cash',$payment))?'checked':'' ?> disabled>
                     <label class="form-check-label" for="">
                         Cash
                     </label>
@@ -277,8 +387,6 @@
         rules: {
             'name':{
                 required: true,
-                minlength: 4,
-                maxlength: 20,
             },
             'type[]': {
                 required: true,
@@ -311,8 +419,6 @@
         messages:{
             name:{
                 required: 'Please enter a name',
-                minlength: 'Minimum 4 digit required',
-                maxlength: 'Minimum 20 digit required'
             },
             type:{
                 required: "You must check at least 1 box"

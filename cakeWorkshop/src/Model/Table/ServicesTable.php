@@ -85,7 +85,6 @@ class ServicesTable extends Table
 
         $validator
             ->scalar('technology')
-            ->maxLength('technology', 255)
             ->allowEmptyString('technology');
 
         $validator

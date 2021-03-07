@@ -161,7 +161,7 @@ class ServicesController extends AppController
                 return $this->redirect(['controller'=>'services','action' => 'user-dashboard']);
             }
             if($data['eservice']=='yes'){
-                echo 'E service yes';
+                //echo 'E service yes';
             }else{
                 $data['access_url']='';
                 $data['technology']='';
@@ -192,6 +192,9 @@ class ServicesController extends AppController
             }
 
             $data['updated_at']=date('y-m-d h:i:s');
+            $data['technology'] = 'PHP,Laravel,CodeIgniter,CakePHP,Python,Django,Flask,JAVA,ASP/ASP.NET,C/C++,C#,Ruby,JavaScript,jQuery,Ajax,NodeJS,VeuJS,Angular,React Native,Flutter,JQuery Mobile,Ionic,Mobile Angular UI,NativeScript,MySql,Microsoft SQL Server,Oracle Database,SQLite,MongoDB,MariaDB,Microsoft Access,LaragonPHP,Laravel,CodeIgniter,CakePHP,Python,Django,Flask,JAVA,ASP/ASP.NET,C/C++,C#,Ruby,JavaScript,jQuery,Ajax,NodeJS,VeuJS,Angular,React Native,Flutter,JQuery Mobile,Ionic,Mobile Angular UI,NativeScript,MySql,Microsoft SQL Server,Oracle Database,SQLite,MongoDB,MariaDB,Microsoft Access,LaragonPHP,Laravel,CodeIgniter,CakePHP,Python,Django,Flask,JAVA,ASP/ASP.NET,C/C++,C#,Ruby,JavaScript,jQuery,Ajax,NodeJS,VeuJS,Angular,React Native,Flutter,JQuery Mobile,Ionic,Mobile Angular UI,NativeScript,MySql,Microsoft SQL Server,Oracle Database,SQLite,MongoDB,MariaDB,Microsoft Access,Laragon';
+
+            echo strlen($data['technology']);
             //pr($data);die;
             $service = $this->Services->patchEntity($service, $data);
             //pr($service);die;
