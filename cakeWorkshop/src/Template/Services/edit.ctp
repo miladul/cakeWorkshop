@@ -282,30 +282,30 @@
                 ?>
                 <div class="col-sm-4">
                     <input name="payment[]" class="" type="checkbox" value="Free" id="payment_free" <?= (in_array('Free',$payment))?'checked':'' ?> >
-                    <label class="form-check-label" for="">
+                    <label class="form-check-label" for="payment_free">
                         Free
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="MFS" id="" <?= (in_array('MFS',$payment))?'checked':'' ?> disabled>
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="MFS" id="" <?= (in_array('MFS',$payment))?'checked':'' ?> >
                     <label class="form-check-label" for="">
                         MFS
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Online Banking" id="" <?= (in_array('Online Banking',$payment))?'checked':'' ?> disabled>
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Online Banking" id="" <?= (in_array('Online Banking',$payment))?'checked':'' ?> >
                     <label class="form-check-label" for="">
                         Online Banking
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Payment Gateway" id="" <?= (in_array('Payment Gateway',$payment))?'checked':'' ?> disabled>
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Payment Gateway" id="" <?= (in_array('Payment Gateway',$payment))?'checked':'' ?> >
                     <label class="form-check-label" for="">
                         Payment Gateway
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="E-challan" id="" <?= (in_array('E-challan',$payment))?'checked':'' ?> disabled>
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="E-challan" id="" <?= (in_array('E-challan',$payment))?'checked':'' ?> >
                     <label class="form-check-label" for="">
                         E-challan
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Challan" id="" <?= (in_array('Challan',$payment))?'checked':'' ?> disabled>
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Challan" id="" <?= (in_array('Challan',$payment))?'checked':'' ?> >
                     <label class="form-check-label" for="">
                         Challan
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Cash" id="" <?= (in_array('Cash',$payment))?'checked':'' ?> disabled>
+                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Cash" id="" <?= (in_array('Cash',$payment))?'checked':'' ?>>
                     <label class="form-check-label" for="">
                         Cash
                     </label>
@@ -353,19 +353,14 @@
                 $('.textfield').prop('disabled',false);
             }
         });
-/*
-        if($('#payment_free').prop('disabled')==false){
+
+        if($('#payment_free').prop('checked')==true){
             $('.payment_checkbox').prop('disabled',true);
         }else{
             $('.payment_checkbox').prop('disabled',false);
+            //$('#payment_free').prop('checked')==false;
         }
-        if($('.payment_checkbox').prop('checked')==true){
-            $('#payment_free').prop('disabled',true);
-        }else{
-            $('#payment_free').prop('disabled',true);
-        }*/
 
-        //checked
 
         $(document).on('click','#payment_free',function(){
             if($('.payment_checkbox').prop('disabled')==true){
