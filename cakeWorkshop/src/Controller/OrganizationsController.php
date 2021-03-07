@@ -44,6 +44,7 @@ class OrganizationsController extends AppController
      */
     public function view($id = null)
     {
+        $this->layout="default2";
         //deny normal user for view
         $user = $this->Auth->user();
         if(!($user['role']=='admin')){
@@ -96,9 +97,9 @@ class OrganizationsController extends AppController
                 $org_type_error = $this->Flash->error(__('Please select organization type'));
                 return $this->redirect(['action' => 'add']);
             }
-             
 
-            
+
+
 
             //pr($data);die;
             $user = $this->Users->patchEntity($user, $data);

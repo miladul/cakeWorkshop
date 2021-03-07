@@ -1,11 +1,13 @@
 <?php
 //status find
+//pr($services);
 $statusArr = [
     '0'=>'Inactive',
     '1'=>'Active'
 ];
 
 ?>
+
 
 
 <div class="row mt-5">
@@ -55,21 +57,36 @@ $statusArr = [
     </div>
 </div>
 <div class="row">
-    <div class="col-sm-10 mx-auto">
-        <h4>
-            All Services of <sapa style="color: #3a945b"><?= h($organization->name) ?></sapa>
-        </h4>
-        <table cellpadding="0" cellspacing="0" class="table-bordered table-striped">
+    <div class="col-sm-1"></div>
+    <div class="col-sm-11">
+
+    </div>
+</div>
+
+<div class="service_view_table table-responsive">
+    <h4>
+        All Services of <sapa style="color: #3a945b"><?= h($organization->name) ?></sapa>
+    </h4>
+    <div class="">
+        <table class="table table-bordered table-striped">
             <thead>
             <tr>
-                <th scope="col"><?= $this->Paginator->sort('SL') ?></th>
+                <th scope="col" width="3%"><?= $this->Paginator->sort('SL') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('type') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('eservice') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Access_url') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('customer_type') ?></th>
+                <th scope="col"><?= $this->Paginator->sort('processing_time') ?></th>
+                <th scope="col" width="5%"><?= $this->Paginator->sort('eservice') ?></th>
+                <th scope="col" width="4%"><?= $this->Paginator->sort('Access_url') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Technology') ?></th>
-                <th scope="col"><?= $this->Paginator->sort('Access Point') ?></th>
+                <th scope="col" width="4%"><?= $this->Paginator->sort('no_of_user') ?></th>
+                <th scope="col" ><?= $this->Paginator->sort('major_features') ?></th>
+                <th scope="col" ><?= $this->Paginator->sort('Access Point') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('Payment') ?></th>
+                <th scope="col" ><?= $this->Paginator->sort('Focal Person') ?></th>
+                <th scope="col" ><?= $this->Paginator->sort('Designation') ?></th>
+                <th scope="col" ><?= $this->Paginator->sort('Phone') ?></th>
+                <th scope="col" ><?= $this->Paginator->sort('Email') ?></th>
             </tr>
             </thead>
             <tbody>
@@ -81,16 +98,33 @@ $statusArr = [
                     <td><?= ++$sl; ?></td>
                     <td><?= h($service->name) ?></td>
                     <td><?= h($service->type) ?></td>
+                    <td><?= h($service->customer_type) ?></td>
+                    <td><?= h($service->processing_time) ?></td>
                     <td><?= h($service->eservice) ?></td>
-                    <td><?= h($service->access_url) ?></td>
+                    <td><a href="http://<?= $service->access_url ?>" target="_blank">URL</a></td>
                     <td><?= h($service->technology) ?></td>
+                    <td><?= h($service->no_of_user) ?></td>
+                    <td><?= h($service->major_features) ?></td>
                     <td><?= h($service->access_point) ?></td>
                     <td><?= h($service->payment) ?></td>
+                    <td><?= h($service->focal_person_name) ?></td>
+                    <td><?= h($service->focal_person_designation) ?></td>
+                    <td><?= h($service->focal_person_phone) ?></td>
+                    <td><?= h($service->focal_person_email) ?></td>
                 </tr>
             <?php endforeach; ?>
             </tbody>
         </table>
     </div>
 </div>
+
+<style>
+    .service_view_table{
+        padding: 25px;
+    }
+    .service_view_table th{
+
+    }
+</style>
 
 
