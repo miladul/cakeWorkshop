@@ -71,7 +71,7 @@ $statusArr = [
         <table class="table table-bordered table-striped">
             <thead>
             <tr>
-                <th scope="col" width="3%"><?= $this->Paginator->sort('SL') ?></th>
+                <th scope="col" width="4%"><?= $this->Paginator->sort('SL') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('name') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('type') ?></th>
                 <th scope="col"><?= $this->Paginator->sort('customer_type') ?></th>

@@ -51,13 +51,13 @@
                     <input type="radio" name="eservice" class="choice" id="eservice" value="yes" <?= ($service->eservice=='yes')? 'checked':'';?> />Yes&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="eservice" class="choice" id="eservice" value="no" <?= ($service->eservice=='no')? 'checked':'';?> />No&nbsp;
                 </div>
-                <label for="" class="col-sm-2 col-form-label">Access URL</label>
+                <label for="" class="col-sm-2 col-form-label textfieldHide">Access URL</label>
                 <div class="col-sm-4">
-                    <input type="text" name="access_url" class="form-control textfield" id="access-url" value="<?= !empty($service->access_url)? $service->access_url:'';?>" placeholder="Enter URL" <?= ($service->eservice=='no')? 'disabled':'';?> >
+                    <input type="text" name="access_url" class="form-control textfield textfieldHide" id="access-url" value="<?= !empty($service->access_url)? $service->access_url:'';?>" placeholder="Enter URL" <?= ($service->eservice=='no')? 'disabled':'';?> >
                 </div>
             </div>
             <div class="form-group row mt-2">
-                <label for="" class="col-sm-2 col-form-label">Technology</label>
+                <label for="" class="col-sm-2 col-form-label textfieldHide">Technology</label>
                 <?php
                 if(!empty($service->technology)){
                     $technology = explode(',',$service->technology);
@@ -65,7 +65,7 @@
                     //pr($service);die;
                 }
                 ?>
-                <div class="col-sm-10">
+                <div class="col-sm-10 textfieldHide">
                     <div>
                         <input name="technology[]" class="textfield" type="checkbox" value="PHP" id="" <?= (!empty($service->technology)?(in_array('PHP',$technology))?'checked':'':'')?> <?= ($service->eservice=='no')? 'disabled':'';?>>
                         <label class="form-check-label" for="">
@@ -345,12 +345,13 @@
         $(document).on('click','.choice',function(){
             if($(this).val() == 'no')
             {
-                $('.textfield').prop('disabled',true);
-                //$('.textfield').css({"display": "none"});
+                //$('.textfield').prop('disabled',true);
+                $('.textfieldHide').css({"display": "none"});
             }
             else
             {
                 $('.textfield').prop('disabled',false);
+                $('.textfieldHide').css({"display": "block"});
             }
         });
 
@@ -359,6 +360,7 @@
         }else{
             $('.payment_checkbox').prop('disabled',false);
             //$('#payment_free').prop('checked')==false;
+            $('.textfieldHide').css({"display": "block"});
         }
 
 

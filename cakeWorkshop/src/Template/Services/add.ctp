@@ -1,7 +1,7 @@
 <div class="row mt-5">
     <div class="col-sm-10 mx-auto">
         <h3>
-            Add New Service
+            Add New Service Or Initiative
             <?= $this->Html->link(__('Back'), ['controller'=>'users','action' => 'user-dashboard'],['class'=>'btn btn-danger float-right ml-3']) ?>
             <?= $this->Html->link(__('My Services'), ['controller'=>'users','action' => 'user-dashboard'],['class'=>'btn btn-secondary float-right']) ?>
         </h3>
@@ -10,7 +10,7 @@
             <legend class="mb-4"><?= __('') ?></legend>
             <p class="text-center bg-dark text-white">All field are mandatory, Please fill up all required fields</p>
             <div class="form-group row">
-                <label for="name" class="col-sm-2 col-form-label">Service Name  </label>
+                <label for="name" class="col-sm-2 col-form-label">Service Or Initiative Name  </label>
                 <div class="col-sm-4">
                     <input type="text" class="form-control" name="name" id="name" placeholder="Enter service name">
                 </div>
@@ -35,9 +35,9 @@
                 <div class="col-sm-4">
                     <input type="text" name="customer_type" class="form-control" id="customer-type" placeholder="Enter customer type">
                 </div>
-                <label for="" class="col-sm-2 col-form-label">Processing Time </label>
+                <label for="" class="col-sm-2 col-form-label">Duration </label>
                 <div class="col-sm-3">
-                    <input type="text" name="processing_time" class="form-control" id="processing-time" placeholder="e.g - 30Days">
+                    <input type="text" name="processing_time" class="form-control" id="processing-time" placeholder="Example - 30Days">
                 </div>
                 <label for="" class="col-sm-1 col-form-label">Days</label>
             </div>
@@ -47,15 +47,15 @@
                     <input type="radio" name="eservice" class="choice" id="eservice" value="yes" />Yes&nbsp;&nbsp;&nbsp;
                     <input type="radio" name="eservice" class="choice" id="eservice" value="no" />No&nbsp;
                 </div>
-                <label for="" class="col-sm-2 col-form-label">Access URL</label>
-                <div class="col-sm-4">
+                <label for="" class="col-sm-2 col-form-label textfieldHide" style="display: none">Access URL</label>
+                <div class="col-sm-4 textfieldHide" style="display: none">
                     <input type="text" name="access_url" class="form-control textfield" id="access-url" placeholder="Enter URL" disabled>
                 </div>
 
             </div>
             <div class="form-group row mt-2">
-                <label for="" class="col-sm-2 col-form-label">Technology</label>
-                <div class="col-sm-10">
+                <label for="" class="col-sm-2 col-form-label  textfieldHide" style="display: none">Technology</label>
+                <div class="col-sm-10 textfieldHide" style="display: none">
                     <div>
                         <input name="technology[]" class="textfield" type="checkbox" value="PHP" id="" disabled>
                         <label class="form-check-label" for="">
@@ -233,59 +233,75 @@
             <div class="form-group row mt-2">
                 <label for="" class="col-sm-2 col-form-label">No Of Users</label>
                 <div class="col-sm-4">
-                    <input type="number" name="no_of_user" class="form-control textfield" id="" placeholder="" disabled>
+                    <input type="number" name="no_of_user" class="form-control" id="" placeholder="">
                 </div>
                 <label for="" class="col-sm-2 col-form-label">Major Features</label>
                 <div class="col-sm-4">
-                    <textarea name="major_features" class="form-control textfield" disabled></textarea>
+                    <textarea name="major_features" class="form-control"></textarea>
                 </div>
             </div>
             <div class="form-group row mt-2">
                 <label for="access-point" class="col-sm-2 col-form-label">Access Point</label>
                 <div class="col-sm-4 type_error">
-                    <input name="access_point[]" type="checkbox" value="Portal" class="textfield" disabled>
+                    <span class="access_point_field">
+                        <input name="access_point[]" type="checkbox" class="access_point_field" value="Portal" >
                     <label class="form-check-label">
                         Portal
                     </label>
-                    <input name="access_point[]" type="checkbox" value="UDC" class="textfield" disabled>
+                    <input name="access_point[]" type="checkbox" class="access_point_field" value="UDC">
                     <label class="form-check-label">
                         UDC
                     </label>
-                    <input name="access_point[]" type="checkbox" value="333" class="textfield" disabled>
+                    <input name="access_point[]" type="checkbox" class="access_point_field" value="333">
                     <label class="form-check-label">
                         333
                     </label>
+                    </span>
+                    <input type="checkbox" value="access_point_others" id="access_point_others" class="">
+                    <label class="form-check-label">
+                        Others
+                    </label>
+                    <input type="text" name="access_point[]" class="access_point_other_input" placeholder="Enter your access point" style="display: none">
                 </div>
                 <label for="payment" class="col-sm-2 col-form-label">Payment Method</label>
                 <div class="col-sm-4">
-                    <input name="payment[]" class="" type="checkbox" value="Free" id="payment_free">
+
+                    <span class="payment_checkbox">
+                        <input name="payment[]" class="" type="checkbox" value="Free" id="payment_free">
+                        <label class="form-check-label" for="">
+                            Free
+                        </label>
+                        <input name="payment[]" class="payment_checkbox" type="checkbox" value="MFS" id="">
+                        <label class="form-check-label" for="">
+                            MFS
+                        </label>
+                        <input name="payment[]" class="payment_checkbox" type="checkbox" value="Online Banking" id="">
+                        <label class="form-check-label" for="">
+                            Online Banking &nbsp;&nbsp;&nbsp;
+                        </label>
+                        <input name="payment[]" class="payment_checkbox" type="checkbox" value="Payment Gateway" id="">
+                        <label class="form-check-label" for="">
+                            Payment Gateway
+                        </label>
+                        <input name="payment[]" class="payment_checkbox" type="checkbox" value="E-challan" id="">
+                        <label class="form-check-label" for="">
+                            E-challan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </label>
+                        <input name="payment[]" class="payment_checkbox" type="checkbox" value="Challan" id="">
+                        <label class="form-check-label" for="">
+                            Challan
+                        </label>
+                        <input name="payment[]" class="payment_checkbox" type="checkbox" value="Cash" id="">
+                        <label class="form-check-label" for="">
+                            Cash
+                        </label>
+                    </span>
+
+                    <input name="" class="payment_others" type="checkbox" value="payment_others" id="">
                     <label class="form-check-label" for="">
-                        Free
+                        Others
                     </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="MFS" id="">
-                    <label class="form-check-label" for="">
-                        MFS
-                    </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Online Banking" id="">
-                    <label class="form-check-label" for="">
-                        Online Banking &nbsp;&nbsp;&nbsp;
-                    </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Payment Gateway" id="">
-                    <label class="form-check-label" for="">
-                        Payment Gateway
-                    </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="E-challan" id="">
-                    <label class="form-check-label" for="">
-                        E-challan &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Challan" id="">
-                    <label class="form-check-label" for="">
-                        Challan
-                    </label>
-                    <input name="payment[]" class="payment_checkbox" type="checkbox" value="Cash" id="">
-                    <label class="form-check-label" for="">
-                        Cash
-                    </label>
+                    <input type="text" name="payment[]" class="payment_others_input" placeholder="Enter your payment method" style="display: none">
                 </div>
             </div>
             <div class="form-row">
@@ -319,28 +335,64 @@
         $(document).on('click','.choice',function(){
             if($(this).val() == 'no')
             {
-                $('.textfield').prop('disabled',true);
+                $('.textfieldHide').css({"display": "none"});
+            }
+            else
+            {
+                //$('.textfield').prop('disabled',false);
+                $('.textfieldHide').css({"display": "block"});
+            }
+        });
+        $(document).on('click','.choice',function(){
+            if($(this).val() == 'yes')
+            {
+                $('.textfield').prop('disabled',false);
+                $('.textfieldHide').css({"display": "block"});
                 //$('#string').html('Test Welcome');
             }
             else
             {
-                $('.textfield').prop('disabled',false);
+                $('.textfield').prop('disabled',true);
+                $('.textfieldHide').css({"display": "none"});
+            }
+        });
+
+
+
+
+        //Access point if choose Others option
+        $(document).on('click','#access_point_others',function(){
+            if($('#access_point_others').val() == 'access_point_others')
+            {
+                $('.access_point_other_input').css({"display": "block"});
+                $('.access_point_field').prop('disabled',true);
+                $('.access_point_field').css({"display": "none"});
+
+                //$('#string').html('Test Welcome');
+            }
+        });
+
+        //Payment Method if choose Others option
+        $(document).on('click','.payment_others',function(){
+            if($('.payment_others').val() == 'payment_others')
+            {
+                $('.payment_others_input').css({"display": "block"});
+                $('.payment_checkbox').prop('disabled',true);
+                $('.payment_checkbox').css({"display": "none"});
+
+                //$('#string').html('Test Welcome');
             }
         });
 
 
         $(document).on('click','#payment_free',function(){
             //$('.payment_checkbox').prop('disabled',true);
-            if($('.payment_checkbox').prop('disabled')==true){
-                $('.payment_checkbox').prop('disabled',false);
+            if($('.payment_checkbox,.payment_others').prop('disabled')==true){
+                $('.payment_checkbox,.payment_others').prop('disabled',false);
             }else{
-                $('.payment_checkbox').prop('disabled',true);
+                $('.payment_checkbox,.payment_others').prop('disabled',true);
             }
         });
-
-        /*$(document).on('click','#payment_free',function(){
-            $('.payment_checkbox').prop('disabled',true);
-        });*/
 
 
 
@@ -368,7 +420,9 @@
             'processing_time':{
                 required: true,
             },
-
+            'eservice':{
+                required: true,
+            },
             'technology[]':{
                 required: true,
             },
@@ -411,6 +465,9 @@
             },
             processing_time:{
                 required: 'Please enter processing time(E.g- 30 Days)',
+            },
+            eservice:{
+                required: 'Please choose eservice',
             },
             technology:{
                 required: 'Please select minimum one technology',
